@@ -1,0 +1,110 @@
+.tests__menu{
+    width: 50px;
+    min-height: 100%;
+    background-color: #CFD8DC;
+    overflow: hidden;
+    transition: all .5s;
+    position: relative;
+    z-index: 1;
+    &.active{
+        width: 200px;
+        ul{
+            opacity: 1;
+            transform: translate(0%);
+        }
+        .menu__text{
+            opacity: 1;
+            transform: translate(0%);
+        }
+    }
+}
+.tests__menu-options{
+    margin: 20px 0 0 0;
+    
+    position: relative;
+    li{
+        font-size: 14px;
+        cursor: pointer;
+        transition: .5s;
+        margin-left: 8px;
+        padding-left: 25px;
+        margin-right: 8px;
+        border-radius: 3px;
+        position: relative;
+        &::before{
+            content: ' ';
+            position: absolute;
+            width: 7px;
+            height: 7px;
+            background-color: #34515E;
+            border-radius: 50%;
+            left: 7px;
+            top: 50%;
+            transform: translate(0, -50%);
+        }
+        &.active{
+            color: #fff;
+            background-color: #D32F2F;
+            &::before{
+                background-color: #fff;
+            }
+        }
+    }
+    ul{
+        margin-block-start: 0px;
+        margin-block-end: 0px;
+        padding-inline-start: 0px;
+        opacity: 0;
+        transform: translate(-200%);
+        transition: all .5s;
+        list-style-type:  none;
+
+    }
+}
+.tests__menu.active{
+    span{
+        border-radius: 2px;
+        &:last-child{
+            margin: -2px 0 0px 0px;
+            transform: rotate(45deg);
+            width: 9px;
+        }
+        &:first-child{
+            margin: 0 0 1px 0px;
+            transform: rotate(-45deg);
+            width: 9px;
+        }
+        &:nth-child(2){
+            margin-left: 1px;
+        }
+    }
+}
+.tests__menu-burger{
+    display: flex;
+    height: 52px;
+    padding: 18px;
+    border-bottom: 1px solid #8EACBB;
+    cursor: pointer;
+    .menu__text{
+        margin: 0 0 0 40px;
+        opacity: 0;
+        transform: translate(-300%);
+        transition: .5s;
+    }
+    p{
+        font-size: 15px;
+        line-height: 10px;
+        font-weight: 700;
+        color: #34515E;
+    }
+    
+    span{
+        content: ' ';
+        display: block;
+        width: 14px;
+        height: 2px;
+        background-color: #8EACBB;
+        margin: 0 0 3px 0;
+        transition: all .5s;
+    }
+}
